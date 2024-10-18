@@ -16,7 +16,7 @@ const Layout = () => {
     }
   }}>
 
-    <Tabs.Screen name="explorer" options={{
+    <Tabs.Screen name="index" options={{
       tabBarLabel: "Explore",
       tabBarIcon: ({ color, size }) => {
         return <AntDesign name="search1" color={color} size={size} />

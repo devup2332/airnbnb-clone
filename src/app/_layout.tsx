@@ -82,6 +82,7 @@ function RootLayoutNav() {
   const router = useRouter()
 
   const { isLoaded, isSignedIn } = useAuth()
+  console.log({ isLoaded, isSignedIn })
 
   useEffect(() => {
     if (isLoaded && !isSignedIn) {

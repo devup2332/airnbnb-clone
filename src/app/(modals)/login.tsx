@@ -8,8 +8,8 @@ import IconGoogle from '@/assets/icons/IconGoogle'
 import IconApple from '@/assets/icons/IconApple'
 import IconFacebook from '@/assets/icons/IconFacebook'
 import IconPhone from "@/assets/icons/IconPhone";
-import { useAuth, useOAuth } from "@clerk/clerk-expo";
-import { useWarmUpBrowser } from "@/assets/hooks/webhook";
+import { useOAuth } from "@clerk/clerk-expo";
+import { useWarmUpBrowser } from "@/hooks/useWarmUpBrowser";
 
 enum Strategy {
   Google = "oauth_google",
@@ -17,31 +17,31 @@ enum Strategy {
   Apple = "oauth_apple",
 }
 
+const buttons = [
+  {
+    title: "Continue with Phone",
+    Icon: IconPhone,
+    s: Strategy.Google
+  },
+  {
+    title: "Continue with Facebook",
+    Icon: IconFacebook,
+    s: Strategy.Facebook
+  },
+  {
+    title: "Continue with Google",
+    Icon: IconGoogle,
+    s: Strategy.Google
+  },
+  {
+    title: "Continue with Apple",
+    Icon: IconApple,
+    s: Strategy.Apple
+  }
+]
 
 const LoginModal = () => {
-  useWarmUpBrowser()
-  const buttons = [
-    {
-      title: "Continue with Phone",
-      Icon: IconPhone,
-      s: Strategy.Google
-    },
-    {
-      title: "Continue with Facebook",
-      Icon: IconFacebook,
-      s: Strategy.Facebook
-    },
-    {
-      title: "Continue with Google",
-      Icon: IconGoogle,
-      s: Strategy.Google
-    },
-    {
-      title: "Continue with Apple",
-      Icon: IconApple,
-      s: Strategy.Apple
-    }
-  ]
+  // useWarmUpBrowser()
   const animation = new Animated.Value(0);
   const inputRange = [0, 1];
   const outputRange = [1, 0.95];
@@ -66,7 +66,7 @@ const LoginModal = () => {
       console.log({ createdSessionId })
       if (createdSessionId) {
         setActive!({ session: createdSessionId })
-        router.back()
+        router.push('/(tabs)/')
       }
 
     } catch (err) {
