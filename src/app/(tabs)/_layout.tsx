@@ -7,7 +7,9 @@ const Layout = () => {
     tabBarActiveTintColor: Colors.primary,
     tabBarStyle: {
       height: 60,
-      paddingBottom: 10
+      paddingBottom: 10,
+      elevation: 0,
+      borderColor: "transparent",
     },
     tabBarLabelStyle: {
       fontFamily: "mon-sb",
