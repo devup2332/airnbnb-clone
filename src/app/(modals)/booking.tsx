@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native"
 
 const BookingPage = () => {
   return <View style={styles.container}>
-    <Text>Login Modal</Text>
+    <Text>Booking Modal</Text>
   </View>
 }
 

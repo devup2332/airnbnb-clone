@@ -1,21 +1,21 @@
 import Colors from "@/constants/Colors"
-import { AntDesign, FontAwesome5, FontAwesome6, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons"
+import { AntDesign, FontAwesome5, FontAwesome6, Ionicons } from "@expo/vector-icons"
 import { Tabs } from "expo-router"
 
 const Layout = () => {
-  return <Tabs screenOptions={{
+  return <Tabs id="tabBar-1" screenOptions={{
     tabBarActiveTintColor: Colors.primary,
     tabBarStyle: {
       height: 60,
       paddingBottom: 10,
       elevation: 0,
+      position: "absolute",
       borderColor: "transparent",
     },
     tabBarLabelStyle: {
       fontFamily: "mon-sb",
     }
   }}>
-
     <Tabs.Screen name="index" options={{
       tabBarLabel: "Explore",
       tabBarIcon: ({ color, size }) => {
@@ -35,8 +35,8 @@ const Layout = () => {
       }
     }} />
     <Tabs.Screen name="inbox" options={{
-      tabBarLabel: "Inbox",
-      tabBarIcon: ({ color, size }) => {
+      tabBarLabel: "Messages",
+      tabBarIcon: ({ color }) => {
         return <FontAwesome6 name="message" color={color} size={22} />
       }
     }} />
@@ -46,6 +46,8 @@ const Layout = () => {
         return <Ionicons name="person-circle-outline" color={color} size={size} />
       }
     }} />
+
+
   </Tabs>
 }
 

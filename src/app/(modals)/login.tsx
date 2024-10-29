@@ -9,7 +9,6 @@ import IconApple from '@/assets/icons/IconApple'
 import IconFacebook from '@/assets/icons/IconFacebook'
 import IconPhone from "@/assets/icons/IconPhone";
 import { useOAuth } from "@clerk/clerk-expo";
-import { useWarmUpBrowser } from "@/hooks/useWarmUpBrowser";
 
 enum Strategy {
   Google = "oauth_google",
@@ -60,10 +59,8 @@ const LoginModal = () => {
       [Strategy.Facebook]: facebookStrategy,
       [Strategy.Apple]: appleStrategy
     }[strategy]
-    console.log({ strategy })
     try {
       const { createdSessionId, setActive } = await selected()
-      console.log({ createdSessionId })
       if (createdSessionId) {
         setActive!({ session: createdSessionId })
         router.push('/(tabs)/')
