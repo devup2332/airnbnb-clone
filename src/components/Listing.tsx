@@ -1,3 +1,4 @@
+import Colors from "@/constants/Colors";
 import { ListingItem } from "@/interfaces/ListingItem";
 import { Ionicons } from "@expo/vector-icons";
 import { BottomSheetFlatList } from "@gorhom/bottom-sheet";
@@ -57,7 +58,7 @@ const Listing: React.FC<Props> = ({ category, items }) => {
                 top: 30,
               }}
             >
-              <Ionicons name="heart-outline" size={24} color={"#000"} />
+              <Ionicons name="heart-sharp" size={24} color={Colors.grey} />
             </TouchableOpacity>
             <View
               style={{ flexDirection: "row", justifyContent: "space-between" }}

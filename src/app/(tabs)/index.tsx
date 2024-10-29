@@ -23,7 +23,7 @@ const IndexPageLayout = () => {
     setCat(category);
   };
   return (
-    <GestureHandlerRootView style={{ flex: 1,marginTop: -70 }}>
+    <GestureHandlerRootView style={{ flex: 1, marginTop: -70 }}>
       <StatusBar barStyle="dark-content" />
       <Stack.Screen
         options={{

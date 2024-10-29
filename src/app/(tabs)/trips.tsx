@@ -1,9 +1,11 @@
-import { Text, View } from "react-native"
+import { Text, View } from "react-native";
 
 const TripsPage = () => {
-  return <View>
-    <Text>Trips Page</Text>
-  </View>
-}
+  return (
+    <View>
+      <Text>Trips Page</Text>
+    </View>
+  );
+};
 
-export default TripsPage
+export default TripsPage;

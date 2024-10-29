@@ -1,11 +1,11 @@
-import { Text, View } from "react-native"
+import { Text, View } from "react-native";
 
 const InboxPage = () => {
-  return <View>
-    <Text>
-      Inbox Page
-    </Text>
-  </View>
-}
+  return (
+    <View>
+      <Text>Inbox Page</Text>
+    </View>
+  );
+};
 
-export default InboxPage
+export default InboxPage;
