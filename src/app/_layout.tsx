@@ -143,8 +143,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#fff",
     position: "absolute",
+    left: 0,
+    zIndex: 1,
     elevation: 5,
     borderRadius: 20,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowRadius: 6,
+    shadowOpacity: 0.1,
+    shadowColor: "#000",
     padding: 5
   },
 });

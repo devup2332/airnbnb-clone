@@ -1,6 +1,12 @@
 import Colors from "@/constants/Colors";
 import { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const ModalHeaderText = () => {
   const [active, setActive] = useState(0);
@@ -24,7 +30,7 @@ const ModalHeaderText = () => {
             },
           ]}
         >
-          Stays{" "}
+          Stays
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -45,7 +51,7 @@ const ModalHeaderText = () => {
             },
           ]}
         >
-          Experiences{" "}
+          Experiences
         </Text>
       </TouchableOpacity>
     </View>
@@ -57,6 +63,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     gap: 10,
+    position: "absolute",
+    zIndex: 0,
+    width: Dimensions.get("window").width,
+    left: -Dimensions.get("window").width * 0.035,
     flex: 1,
   },
 
