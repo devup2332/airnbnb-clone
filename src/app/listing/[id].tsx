@@ -58,6 +58,16 @@ const ListTingItemPage = () => {
     };
   }, []);
 
+  const animatedTabBarStyles = useAnimatedStyle(() => {
+    return {
+      height: interpolate(
+        scrollOffSet.value,
+        [IMG_HEIGHT, IMG_HEIGHT / 2],
+        [IMG_HEIGHT, 0],
+      ),
+    };
+  });
+
   const animatedHeaderStyles = useAnimatedStyle(() => {
     return {
       opacity: interpolate(scrollOffSet.value, [0, IMG_HEIGHT / 2], [0, 1]),
@@ -69,6 +79,7 @@ const ListTingItemPage = () => {
       await Share.share({
         title: item?.name,
         url: item?.listing_url!,
+        message: item?.listing_url,
       });
     } catch (err) {
       console.log(err);
