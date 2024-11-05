@@ -2,6 +2,7 @@ import Colors from "@/constants/Colors";
 import { useState } from "react";
 import {
   Dimensions,
+  Platform,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -65,8 +66,9 @@ const styles = StyleSheet.create({
     gap: 10,
     position: "absolute",
     zIndex: 0,
+    backgroundColor: "red",
     width: Dimensions.get("window").width,
-    left: -Dimensions.get("window").width * 0.035,
+    left: Platform.OS === "android" ? -Dimensions.get('window').width * 0.035 : undefined,
     flex: 1,
   },
 
