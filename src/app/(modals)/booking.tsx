@@ -1,9 +1,13 @@
+import { BlurView } from "expo-blur";
 import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const BookingPage = () => {
   return (
     <View style={styles.container}>
-      <Text>Booking Modal</Text>
+      <BlurView intensity={100} style={styles.blurContainer} tint="light">
+        <Text>Booking</Text>
+      </BlurView>
     </View>
   );
 };
@@ -11,8 +15,10 @@ const BookingPage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+  },
+  blurContainer: {
+    flex: 1,
+    paddingTop: 120,
   },
 });
 

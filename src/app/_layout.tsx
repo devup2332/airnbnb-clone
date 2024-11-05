@@ -10,6 +10,7 @@ import monBold from "@/assets/fonts/Montserrat-Bold.ttf";
 import monSemi from "@/assets/fonts/Montserrat-SemiBold.ttf";
 import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet, TouchableOpacity } from "react-native";
+import ModalHeaderText from "@/components/ModalHeaderText";
 
 const PUBLIC_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY as string;
 
@@ -117,6 +118,9 @@ function RootLayoutNav() {
         options={{
           presentation: "transparentModal",
           animation: "fade",
+          headerBackVisible: false,
+          headerTransparent: true,
+          headerTitle: () => <ModalHeaderText />,
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
@@ -137,6 +141,11 @@ const styles = StyleSheet.create({
   closeButton: {
     justifyContent: "center",
     alignItems: "center",
-    marginRight: 20,
+    backgroundColor: "#fff",
+    position: "absolute",
+    borderWidth: 1,
+    borderColor: "#000",
+    borderRadius: 20,
+    padding: 5
   },
 });

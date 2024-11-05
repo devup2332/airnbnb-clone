@@ -2,128 +2,11 @@ import { Feature, ListingItemGeo } from "@/interfaces/ListingItemGeo";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import MapView, { Marker, PROVIDER_GOOGLE, Region } from "react-native-maps";
+import MapView, { Marker, Region } from "react-native-maps";
 
 interface Props {
   data: ListingItemGeo;
 }
-
-const airbnbcustommapstyle = [
-  {
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#242f3e",
-      },
-    ],
-  },
-  {
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#746855",
-      },
-    ],
-  },
-  {
-    elementType: "labels.text.stroke",
-    stylers: [
-      {
-        color: "#242f3e",
-      },
-    ],
-  },
-  {
-    featureType: "administrative.locality",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#d59563",
-      },
-    ],
-  },
-  {
-    featureType: "poi",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#d59563",
-      },
-    ],
-  },
-  {
-    featureType: "poi.park",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#263c3f",
-      },
-    ],
-  },
-  {
-    featureType: "poi.park",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#6b9a76",
-      },
-    ],
-  },
-  {
-    featureType: "road",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#38414e",
-      },
-    ],
-  },
-  {
-    featureType: "road",
-    elementType: "geometry.stroke",
-    stylers: [
-      {
-        color: "#212a37",
-      },
-    ],
-  },
-  {
-    featureType: "road",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#9ca5b3",
-      },
-    ],
-  },
-  {
-    featureType: "road.highway",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#746855",
-      },
-    ],
-  },
-  {
-    featureType: "road.highway",
-    elementType: "geometry.stroke",
-    stylers: [
-      {
-        color: "#1f2835",
-      },
-    ],
-  },
-  {
-    featureType: "road.highway",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#f3d19c",
-      },
-    ],
-  },
-]
 
 const INITIAL_REGION: Region = {
   latitude: 52.45801601361907,
@@ -187,7 +70,7 @@ const ListingMaps: React.FC<Props> = ({ data }) => {
           setMarkersVisible(getMarkersVisible(r));
         }}
         initialRegion={INITIAL_REGION}
-        provider={PROVIDER_GOOGLE}
+        provider={undefined}
         style={styles.map}
         showsUserLocation
         showsMyLocationButton
@@ -209,7 +92,7 @@ const styles = StyleSheet.create({
     padding: 6,
     borderRadius: 12,
     backgroundColor: "#fff",
-    shadowColor: "#1b56b5",
+    shadowColor: "#000",
     zIndex: 100,
     elevation: 7,
     shadowOpacity: 0.25,
