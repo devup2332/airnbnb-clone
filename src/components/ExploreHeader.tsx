@@ -57,7 +57,7 @@ const ExploreHeader = ({ dataChanged }: Props) => {
     const selected = itemsRef.current[index];
 
     setCurrentIndex(index);
-    selected?.measure((x, y, w) => {
+    selected?.measure((x) => {
       scrollRef.current?.scrollTo({ x: x - 16, animated: true });
     });
     dataChanged(categories[index].name);
@@ -86,7 +86,7 @@ const ExploreHeader = ({ dataChanged }: Props) => {
             </TouchableOpacity>
           </Link>
           <TouchableOpacity style={styles.filterBtn}>
-            <Ionicons name="options-outline" size={24} color="black" />
+            <Ionicons name="options-outline" size={18} color="black" />
           </TouchableOpacity>
         </View>
         <ScrollView
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
   },
   filterBtn: {
     padding: 10,
-    borderWidth: 1,
+    borderWidth: StyleSheet.hairlineWidth,
     borderColor: Colors.grey,
     borderRadius: 24,
   },
@@ -171,7 +171,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 10,
     borderRadius: 30,
-    borderWidth: StyleSheet.hairlineWidth,
     flex: 1,
     paddingVertical: 10,
     paddingHorizontal: 20,

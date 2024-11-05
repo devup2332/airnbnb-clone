@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
   },
   map: {
     flex: 1,
+    zIndex: 0,
   },
   marker: {
     padding: 6,

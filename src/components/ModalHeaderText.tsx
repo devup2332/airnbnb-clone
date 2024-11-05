@@ -8,7 +8,7 @@ const ModalHeaderText = () => {
     <View style={styles.container}>
       <TouchableOpacity
         style={[
-          styles.buttonText,
+          styles.buttonContainer,
           {
             borderBottomWidth: active === 0 ? 2 : 0,
             borderBottomColor: active === 0 ? "#000" : "transparent",
@@ -18,7 +18,7 @@ const ModalHeaderText = () => {
       >
         <Text
           style={[
-            styles.textHeaderStyle,
+            styles.buttonText,
             {
               color: active === 0 ? "#000" : Colors.grey,
             },
@@ -29,7 +29,7 @@ const ModalHeaderText = () => {
       </TouchableOpacity>
       <TouchableOpacity
         style={[
-          styles.buttonText,
+          styles.buttonContainer,
           {
             borderBottomWidth: active === 1 ? 2 : 0,
             borderBottomColor: active === 1 ? "#000" : "transparent",
@@ -39,7 +39,7 @@ const ModalHeaderText = () => {
       >
         <Text
           style={[
-            styles.textHeaderStyle,
+            styles.buttonText,
             {
               color: active === 1 ? "#000" : Colors.grey,
             },
@@ -56,16 +56,16 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "center",
-    gap: 20,
+    gap: 10,
     flex: 1,
   },
 
-  textHeaderStyle: {
+  buttonText: {
     fontFamily: "mon-sb",
     fontSize: 16,
-    color: "#000",
   },
-  buttonText: {
+  buttonContainer: {
+    paddingHorizontal: 3,
     paddingBottom: 5,
     justifyContent: "center",
     alignItems: "center",
